@@ -16,6 +16,10 @@ const validateProduct = (req: Request, _res: Response, next: NextFunction) => {
     next(new BadRequestError('title должен быть больше 2 и меньше 30 символов.'));
   }
 
+  if (!product.image) {
+    next(new BadRequestError('image обязателен для заполнения.'));
+  }
+
   if (!product.image.fileName || isEmpty(product.image.fileName)) {
     next(new BadRequestError('image.fileName обязателен для заполнения.'));
   }

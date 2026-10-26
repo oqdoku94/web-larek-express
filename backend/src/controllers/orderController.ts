@@ -29,7 +29,7 @@ const createOrder = (req: Request, res: Response, next: NextFunction) => {
         throw new BadRequestError('Некорректная сумма заказа.');
       }
 
-      res.status(201).send({
+      res.status(200).send({
         id: faker.string.uuid(),
         total: totalPrice,
       });

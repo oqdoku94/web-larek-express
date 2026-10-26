@@ -26,7 +26,7 @@ const validateOrder = (req: Request, _res: Response, next: NextFunction) => {
     next(new BadRequestError('Телефон имеет неверный формат.'));
   }
 
-  if (isEmpty(order.address)) {
+  if (!order.address || isEmpty(order.address)) {
     next(new BadRequestError('Отсутствует адрес.'));
   }
 
