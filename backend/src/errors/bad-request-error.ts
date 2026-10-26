@@ -1,4 +1,4 @@
-import StatusError from './StatusError';
+import StatusError from './status-error';
 
 export default class BadRequestError extends StatusError {
   constructor(message: string) {

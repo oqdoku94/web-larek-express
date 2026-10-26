@@ -3,8 +3,8 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import path from 'path';
 import { errors } from 'celebrate';
-import productRouter from './routes/productRouter';
-import orderRouter from './routes/orderRouter';
+import productRouter from './routes/product-router';
+import orderRouter from './routes/order-router';
 import errorHandler from './middlewares/errorHandler';
 
 const app = express();

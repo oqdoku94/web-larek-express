@@ -4,7 +4,7 @@ import {
 import { faker } from '@faker-js/faker';
 import { IOrder } from '../models/order';
 import Product from '../models/product';
-import BadRequestError from '../errors/BadRequestError';
+import BadRequestError from '../errors/bad-request-error';
 
 const createOrder = (req: Request, res: Response, next: NextFunction) => {
   const order: IOrder = req.body;

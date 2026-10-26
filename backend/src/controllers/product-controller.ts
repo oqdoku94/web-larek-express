@@ -2,8 +2,8 @@ import express, {
   Request, Response, NextFunction,
 } from 'express';
 import Product, { IProduct } from '../models/product';
-import InternalServerError from '../errors/InternalServerError';
-import ConflictError from '../errors/ConflictError';
+import InternalServerError from '../errors/internal-server-error';
+import ConflictError from '../errors/conflict-error';
 
 export const getAllProducts = (_req: Request, res: Response, next: NextFunction) => {
   Product.find({}).then((products) => {
