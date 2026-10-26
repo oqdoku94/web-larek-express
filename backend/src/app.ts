@@ -2,8 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import path from 'path';
-import productRouter from './routers/productRouter';
-import orderRouter from "./routers/orderRouter";
+import productRouter from './routes/productRouter';
+import orderRouter from "./routes/orderRouter";
 import errorHandler from "./middlewares/errorHandler";
 
 const app = express();
