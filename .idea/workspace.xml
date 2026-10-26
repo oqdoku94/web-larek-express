@@ -4,54 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="975459ec-8800-4f5f-b5c8-2ca7926c6671" name="Changes" comment="до 3 этапа готово.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/controllers/orderController.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/controllers/productController.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/errors/BadRequestError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/errors/ConflictError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/errors/InternalServerError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/errors/NotFoundError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/errors/StatusError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/middlewares/errorHandler.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/models/order.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/models/product.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/5_Dots.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/5_dots.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Asterisk_2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Butterfly.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Butterfly.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Leaf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Leaf.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Mithosis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Mithosis.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Pill.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Pill.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Polygon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Polygon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Shell.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Soft_Flower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/Soft_Flower.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/asterisk_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/mute-cat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/mute-cat.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/public/images/shell.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/routers/orderRouter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/routers/productRouter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/validators/orderValidator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/validators/productValidator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/productsController.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/products.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routers/productsRouter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-    </list>
+    <list default="true" id="975459ec-8800-4f5f-b5c8-2ca7926c6671" name="Changes" comment="до 3 этапа готово." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,26 +25,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;review&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Projects/web-larek-express/frontend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\Projects\\web-larek-express\\backend\\node_modules\\typescript\\lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "review",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "F:/Projects/web-larek-express/frontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2026.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Projects\web-larek-express\frontend" />
@@ -118,6 +71,7 @@
       <workItem from="1792996165556" duration="4911000" />
       <workItem from="1793002608328" duration="392000" />
       <workItem from="1793003184683" duration="3896000" />
+      <workItem from="1793020479179" duration="377000" />
     </task>
     <task id="LOCAL-00001" summary="Дошел до создания заказа">
       <option name="closed" value="true" />

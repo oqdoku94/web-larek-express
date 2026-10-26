@@ -10,19 +10,19 @@ const validateOrder = (req: Request, _res: Response, next: NextFunction) => {
     next(new BadRequestError('Отсутствуют товары.'));
   }
 
-  if (order.total <= 0) {
+  if (!order.total || order.total <= 0) {
     next(new BadRequestError('Отсутствует общая сумма заказа.'));
   }
 
-  if (isEmpty(order.payment) || (order.payment !== 'card' && order.payment !== 'online')) {
+  if (!order.payment || isEmpty(order.payment) || (order.payment !== 'card' && order.payment !== 'online')) {
     next(new BadRequestError('Неизвестный способ оплаты.'));
   }
 
-  if (!isEmail(order.email)) {
+  if (!order.email || !isEmail(order.email)) {
     next(new BadRequestError('Адрес электронной почты имеет неверный формат.'));
   }
 
-  if (!isMobilePhone(order.phone, 'ru-RU') && !matches(order.phone, /^(?:\+7|8)\d{10}$/)) {
+  if (!order.phone || !isMobilePhone(order.phone, 'ru-RU') && !matches(order.phone, /^(?:\+7|8)\d{10}$/)) {
     next(new BadRequestError('Телефон имеет неверный формат.'));
   }
 
