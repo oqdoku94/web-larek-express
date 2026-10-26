@@ -1,0 +1,7 @@
+import StatusError from './StatusError';
+
+export default class ConflictError extends StatusError {
+  constructor(message: string) {
+    super(message, 409);
+  }
+}
