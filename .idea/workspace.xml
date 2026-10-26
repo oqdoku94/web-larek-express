@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="975459ec-8800-4f5f-b5c8-2ca7926c6671" name="Changes" comment="Рефакторинг">
+    <list default="true" id="975459ec-8800-4f5f-b5c8-2ca7926c6671" name="Changes" comment="Для фронтенда не подходит регулярное выражение телефона">
+      <change afterPath="$PROJECT_DIR$/backend/src/middlewares/logger.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/middlewares/not-found-handler.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/middlewares/errorHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/middlewares/error-handler.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +84,7 @@
       <workItem from="1793002608328" duration="392000" />
       <workItem from="1793003184683" duration="3896000" />
       <workItem from="1793020479179" duration="1082000" />
-      <workItem from="1793022480545" duration="6033000" />
+      <workItem from="1793022480545" duration="7060000" />
     </task>
     <task id="LOCAL-00001" summary="Дошел до создания заказа">
       <option name="closed" value="true" />
@@ -113,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793027039589</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Для фронтенда не подходит регулярное выражение телефона">
+      <option name="closed" value="true" />
+      <created>1793028813497</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1793028813497</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +154,7 @@
     <MESSAGE value="до 3 этапа готово." />
     <MESSAGE value="Переписал валидацию на Celebrate + Joi" />
     <MESSAGE value="Рефакторинг" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг" />
+    <MESSAGE value="Для фронтенда не подходит регулярное выражение телефона" />
+    <option name="LAST_COMMIT_MESSAGE" value="Для фронтенда не подходит регулярное выражение телефона" />
   </component>
 </project>
