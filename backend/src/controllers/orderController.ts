@@ -17,7 +17,7 @@ const createOrder = (req: Request, res: Response, next: NextFunction) => {
 
       const totalPrice = products.reduce((total, product) => {
         if (!product.price) {
-          throw new BadRequestError(`Товар с идентификатором ${product._id} не продается. Price = ${product.price}.`);
+          throw new BadRequestError(`Товар с идентификатором ${product._id} не продается.`);
         }
 
         return total + product.price;

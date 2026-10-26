@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="975459ec-8800-4f5f-b5c8-2ca7926c6671" name="Changes" comment="до 3 этапа готово.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/orderController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/orderController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/middlewares/errorHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/middlewares/errorHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/orderRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/orderRouter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/productRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/productRouter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/validators/orderValidator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/validators/orderValidator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/validators/productValidator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/validators/productValidator.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +54,7 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
     "ts.external.directory.path": "F:\\Projects\\web-larek-express\\backend\\node_modules\\typescript\\lib"
   }
@@ -78,7 +86,7 @@
       <workItem from="1793002608328" duration="392000" />
       <workItem from="1793003184683" duration="3896000" />
       <workItem from="1793020479179" duration="1082000" />
-      <workItem from="1793022480545" duration="22000" />
+      <workItem from="1793022480545" duration="2936000" />
     </task>
     <task id="LOCAL-00001" summary="Дошел до создания заказа">
       <option name="closed" value="true" />

@@ -1,40 +1,17 @@
-import { isEmpty, isLength } from 'validator';
-import {
-  NextFunction, Request, Response,
-} from 'express';
-import { IProduct } from '../models/product';
-import BadRequestError from '../errors/BadRequestError';
+import Joi from 'joi';
+import { celebrate, Segments } from 'celebrate';
 
-const validateProduct = (req: Request, _res: Response, next: NextFunction) => {
-  const product : IProduct = req.body;
+const productValidationSchema = Joi.object({
+  title: Joi.string().min(2).max(30).required(),
+  description: Joi.string(),
+  image: Joi.object({
+    fileName: Joi.string().required(),
+    originalName: Joi.string().required(),
+  }).required(),
+  category: Joi.string().required(),
+  price: Joi.number(),
+});
 
-  if (!product.title || isEmpty(product.title)) {
-    next(new BadRequestError('Title обязателен для заполнения.'));
-  }
+const productValidator = celebrate({ [Segments.BODY]: productValidationSchema });
 
-  if (!isLength(product.title, {
-    min: 2, max: 30,
-  })) {
-    next(new BadRequestError('title должен быть больше 2 и меньше 30 символов.'));
-  }
-
-  if (!product.image) {
-    next(new BadRequestError('image обязателен для заполнения.'));
-  }
-
-  if (!product.image.fileName || isEmpty(product.image.fileName)) {
-    next(new BadRequestError('image.fileName обязателен для заполнения.'));
-  }
-
-  if (!product.image.originalName || isEmpty(product.image.originalName)) {
-    next(new BadRequestError('image.originalName обязателен для заполнения.'));
-  }
-
-  if (!product.category || isEmpty(product.category)) {
-    next(new BadRequestError('category обязателен для заполнения.'));
-  }
-
-  next();
-};
-
-export default validateProduct;
+export default productValidator;

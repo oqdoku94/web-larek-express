@@ -1,9 +1,9 @@
 import express from 'express';
 import createOrder from '../controllers/orderController';
-import validateOrder from '../validators/orderValidator';
+import orderValidator from '../validators/orderValidator';
 
 const orderRouter = express.Router();
 
-orderRouter.post('/', validateOrder, createOrder);
+orderRouter.post('/', orderValidator, createOrder);
 
 export default orderRouter;
