@@ -2,9 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import path from 'path';
+import { errors } from 'celebrate';
 import productRouter from './routes/productRouter';
-import orderRouter from "./routes/orderRouter";
-import errorHandler from "./middlewares/errorHandler";
+import orderRouter from './routes/orderRouter';
+import errorHandler from './middlewares/errorHandler';
 
 const app = express();
 app.use(cors());
@@ -17,6 +18,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // теперь кли�
 app.use('/product/', productRouter);
 app.use('/order/', orderRouter);
 
+app.use(errors());
 app.use(errorHandler);
 
 const port = `${process.env.PORT || 3000}`;
