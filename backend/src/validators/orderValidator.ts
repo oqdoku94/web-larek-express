@@ -1,5 +1,9 @@
-import { Request, Response, NextFunction } from 'express';
-import { isEmail, isMobilePhone, isEmpty, matches } from 'validator';
+import {
+  Request, Response, NextFunction,
+} from 'express';
+import {
+  isEmail, isMobilePhone, isEmpty, matches,
+} from 'validator';
 import { IOrder } from '../models/order';
 import BadRequestError from '../errors/BadRequestError';
 

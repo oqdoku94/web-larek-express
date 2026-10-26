@@ -1,4 +1,6 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, {
+  Request, Response, NextFunction,
+} from 'express';
 import Product, { IProduct } from '../models/product';
 import InternalServerError from '../errors/InternalServerError';
 import ConflictError from '../errors/ConflictError';

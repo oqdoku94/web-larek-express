@@ -1,4 +1,6 @@
-import { NextFunction, Request, Response } from 'express';
+import {
+  NextFunction, Request, Response,
+} from 'express';
 import { faker } from '@faker-js/faker';
 import { IOrder } from '../models/order';
 import Product from '../models/product';
@@ -7,11 +9,7 @@ import BadRequestError from '../errors/BadRequestError';
 const createOrder = (req: Request, res: Response, next: NextFunction) => {
   const order: IOrder = req.body;
 
-  Product.find({
-    _id: {
-      $in: order.items,
-    },
-  })
+  Product.find({ _id: { $in: order.items } })
     .then((products) => {
       if (products.length !== order.items.length) {
         throw new BadRequestError('Один или более товаров не найдены.');

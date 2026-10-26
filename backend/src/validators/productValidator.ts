@@ -1,7 +1,7 @@
+import { isEmpty, isLength } from 'validator';
 import {
-  isEmpty, isLength,
-} from 'validator';
-import { NextFunction, Request, Response } from 'express';
+  NextFunction, Request, Response,
+} from 'express';
 import { IProduct } from '../models/product';
 import BadRequestError from '../errors/BadRequestError';
 
@@ -12,7 +12,9 @@ const validateProduct = (req: Request, _res: Response, next: NextFunction) => {
     next(new BadRequestError('Title обязателен для заполнения.'));
   }
 
-  if (!isLength(product.title, { min: 2, max: 30 })) {
+  if (!isLength(product.title, {
+    min: 2, max: 30,
+  })) {
     next(new BadRequestError('title должен быть больше 2 и меньше 30 символов.'));
   }
 
