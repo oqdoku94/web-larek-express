@@ -6,19 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="975459ec-8800-4f5f-b5c8-2ca7926c6671" name="Changes" comment="Рефакторинг">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/orderController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/order-controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/productController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/product-controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/errors/BadRequestError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/errors/bad-request-error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/errors/ConflictError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/errors/conflict-error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/errors/InternalServerError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/errors/internal-server-error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/errors/NotFoundError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/errors/not-found-error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/errors/StatusError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/errors/status-error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/middlewares/errorHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/middlewares/errorHandler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/orderRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/order-router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/productRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/product-router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/validators/orderValidator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/validators/order-validator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/validators/productValidator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/validators/product-validator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.env.example" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +79,7 @@
       <workItem from="1793002608328" duration="392000" />
       <workItem from="1793003184683" duration="3896000" />
       <workItem from="1793020479179" duration="1082000" />
-      <workItem from="1793022480545" duration="4361000" />
+      <workItem from="1793022480545" duration="6033000" />
     </task>
     <task id="LOCAL-00001" summary="Дошел до создания заказа">
       <option name="closed" value="true" />
@@ -117,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793026343844</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Рефакторинг">
+      <option name="closed" value="true" />
+      <created>1793027039589</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1793027039589</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

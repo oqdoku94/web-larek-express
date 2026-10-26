@@ -6,7 +6,7 @@ const orderValidationSchema = Joi.object({
   total: Joi.number().positive().required(),
   payment: Joi.string().valid('card', 'online').required(),
   email: Joi.string().email().required(),
-  phone: Joi.string().pattern(/^(?:\+7|8)\d{10}$/).required(),
+  phone: Joi.string().required(),
   address: Joi.string().required(),
 });
 
