@@ -15,4 +15,3 @@ const registerValidatorSchema = Joi.object({
 });
 
 export const registerValidator = celebrate({ [Segments.BODY]: registerValidatorSchema });
-
