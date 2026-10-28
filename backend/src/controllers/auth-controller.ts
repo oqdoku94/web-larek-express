@@ -145,12 +145,18 @@ export const refreshAccessToken = async (req: Request, res: Response, next: Next
     return;
   }
 
-  const user = await User.findById(payload._id);
+  const user = await User.findById(payload._id).select('+tokens');
 
   if (!user) {
     next(new UnauthorizedError('Пользователь не найден.'));
     return;
   }
+
+  if (!user.tokens.includes(refreshToken)) {
+    next(new UnauthorizedError('Необходимо авторизоваться.'));
+    return;
+  }
+
   const result = await signIn(user, res);
   res.send({
     user: result.user,
