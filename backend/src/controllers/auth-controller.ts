@@ -10,7 +10,7 @@ import NotFoundError from '../errors/not-found-error';
 import InternalServerError from '../errors/internal-server-error';
 import ConflictError from '../errors/conflict-error';
 import BadRequestError from '../errors/bad-request-error';
-import {JWT_ACCESS_SECRET_KEY, JWT_REFRESH_SECRET_KEY} from "../middlewares/auth";
+import { JWT_ACCESS_SECRET_KEY, JWT_REFRESH_SECRET_KEY } from '../middlewares/auth';
 
 const signIn = async (user: any, res: Response) => {
   const accessToken = jwt.sign(
