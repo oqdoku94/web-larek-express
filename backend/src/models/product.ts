@@ -46,11 +46,13 @@ const productSchema = new mongoose.Schema<IProduct>({
   },
 });
 
-productSchema.post('deleteOne', (doc) => {
+productSchema.post('findOneAndDelete', (doc) => {
+  if (!doc) return;
   const filePath = path.join(__dirname, '../public', doc.image.fileName);
-  fs.rm(filePath, (err) => {
-    if (err) throw err;
-  });
+
+  if (fs.existsSync(filePath)) {
+    fs.rmSync(filePath);
+  }
 });
 
 export default mongoose.model<IProduct>('product', productSchema);

@@ -7,7 +7,7 @@ import uploadRouter from './upload-router';
 
 const indexRouter = express.Router();
 
-indexRouter.use(express.static(path.join(__dirname, 'public'))); // теперь клиент имеет доступ только к публичным файлам
+indexRouter.use(express.static(path.join(__dirname, '../public'))); // теперь клиент имеет доступ только к публичным файлам
 indexRouter.use('/product/', productRouter);
 indexRouter.use('/order/', orderRouter);
 indexRouter.use('/auth/', authRouter);

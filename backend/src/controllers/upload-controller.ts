@@ -1,9 +1,9 @@
 import {
   Request, Response, NextFunction,
 } from 'express';
-import { faker } from '@faker-js/faker';
-import * as fs from 'node:fs';
-import path from 'path';
+
+export const tempDir = process.env.UPLOAD_PATH_TEMP || 'temp';
+export const imagePath = process.env.UPLOAD_PATH || 'images';
 
 const uploadFile = async (req: Request, res: Response, next: NextFunction) => {
   const { file } = req;
@@ -13,16 +13,9 @@ const uploadFile = async (req: Request, res: Response, next: NextFunction) => {
     return;
   }
 
-  const newFileName = `${faker.string.ulid()}${path.extname(file.originalname)}`;
-  const newFilePath = path.join(__dirname, '../public/images', newFileName);
-
-  fs.copyFile(file.path, newFilePath, (err) => {
-    if (err) throw err;
-
-    res.send({
-      fileName: `/images/${newFileName}`,
-      originalName: file.originalname,
-    });
+  res.send({
+    fileName: `/${imagePath}/${file.filename}`,
+    originalName: file.originalname,
   });
 };
 

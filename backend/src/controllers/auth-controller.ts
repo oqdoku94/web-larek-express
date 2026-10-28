@@ -10,22 +10,18 @@ import NotFoundError from '../errors/not-found-error';
 import InternalServerError from '../errors/internal-server-error';
 import ConflictError from '../errors/conflict-error';
 import BadRequestError from '../errors/bad-request-error';
-
-const JWT_ACCESS_SECRET_KEY = process.env.JWT_ACCESS_SECRET_KEY || 'sTrOngSeCrEtKey19934y21nkjvs';
-const JWT_REFRESH_SECRET_KEY = process.env.JWT_REFRESH_SECRET_KEY || '@JIOFNI@*&IUbIU!ijBa32SA4duy1';
-const JWT_ACCESS_TOKEN_EXPIRE = process.env.JWT_ACCESS_TOKEN_EXPIRE || '10m';
-const JWT_REFRESH_TOKEN_EXPIRE = process.env.JWT_REFRESH_TOKEN_EXPIRE || '7d';
+import {JWT_ACCESS_SECRET_KEY, JWT_REFRESH_SECRET_KEY} from "../middlewares/auth";
 
 const signIn = async (user: any, res: Response) => {
   const accessToken = jwt.sign(
     { _id: user._id },
     JWT_ACCESS_SECRET_KEY,
-    { expiresIn: JWT_ACCESS_TOKEN_EXPIRE } as SignOptions,
+    { expiresIn: process.env.AUTH_ACCESS_TOKEN_EXPIRY || '10m' } as SignOptions,
   );
   const refreshToken = jwt.sign(
     { _id: user._id },
     JWT_REFRESH_SECRET_KEY,
-    { expiresIn: JWT_REFRESH_TOKEN_EXPIRE } as SignOptions,
+    { expiresIn: process.env.AUTH_REFRESH_TOKEN_EXPIRY || '7d' } as SignOptions,
   );
 
   res.cookie('refreshToken', refreshToken, {
@@ -126,6 +122,14 @@ export const logout = async (req: Request, res: Response, next: NextFunction) =>
     return;
   }
 
+  res.clearCookie('refreshToken', {
+    sameSite: 'lax',
+    secure: false,
+    httpOnly: true,
+    maxAge: 0,
+    path: '/',
+  });
+
   res.send({ success: true });
 };
 
@@ -152,7 +156,7 @@ export const refreshAccessToken = async (req: Request, res: Response, next: Next
     return;
   }
 
-  if (!user.tokens.includes(refreshToken)) {
+  if (!user.tokens.find((item) => item.token === refreshToken)) {
     next(new UnauthorizedError('Необходимо авторизоваться.'));
     return;
   }

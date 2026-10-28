@@ -1,24 +1,17 @@
 import express, {
   Request, Response, NextFunction,
 } from 'express';
-import Product, { IProduct } from '../models/product';
+import Product from '../models/product';
 import InternalServerError from '../errors/internal-server-error';
 import ConflictError from '../errors/conflict-error';
+import { moveToShareDirectory } from '../middlewares/file';
+import { imagePath } from './upload-controller';
+import NotFoundError from '../errors/not-found-error';
 
 export const getAllProducts = (_req: Request, res: Response, next: NextFunction) => {
   Product.find({}).then((products) => {
     res.send({
-      items: products.map((item: IProduct & any) => ({
-        image: {
-          fileName: item.image.fileName,
-          originalName: item.image.originalName,
-        },
-        _id: item._id,
-        title: item.title,
-        category: item.category,
-        description: item.description,
-        price: item.price,
-      })),
+      items: products,
       total: products.length,
     });
   })
@@ -29,28 +22,9 @@ export const getAllProducts = (_req: Request, res: Response, next: NextFunction)
 };
 
 export const createProduct = (req: express.Request, res: express.Response, next: NextFunction) => {
-  Product.create({
-    title: req.body.title,
-    image: {
-      fileName: req.body.image.fileName,
-      originalName: req.body.image.originalName,
-    },
-    category: req.body.category,
-    description: req.body.description,
-    price: req.body.price,
-  }).then((product) => res.status(201).send(
-    {
-      image: {
-        fileName: product.image.fileName,
-        originalName: product.image.originalName,
-      },
-      _id: product._id,
-      title: product.title,
-      category: product.category,
-      description: product.description,
-      price: product.price,
-    },
-  ))
+  moveToShareDirectory(req.body.image.fileName, imagePath);
+  Product.create(req.body)
+    .then((product) => res.status(201).send(product))
     .catch((err) => {
       let error = new InternalServerError(`Внутреняя ошибка сервера при создании товара: ${err.message}`);
 
@@ -59,4 +33,45 @@ export const createProduct = (req: express.Request, res: express.Response, next:
       }
       next(error);
     });
+};
+
+export const updateProduct = async (req: Request, res: Response, next: NextFunction) => {
+  if (req.body.image && req.body.image.fileName) {
+    moveToShareDirectory(req.body.image.fileName, imagePath);
+  }
+
+  const { productId } = req.params;
+
+  return Product.findByIdAndUpdate(
+    productId,
+    { $set: req.body },
+    {
+      new: true, runValidators: true,
+    },
+  )
+    .then((product) => {
+      if (!product) {
+        next(new NotFoundError('Товар не найден.'));
+        return;
+      }
+
+      res.send(product);
+    })
+    .catch((err) => {
+      const error = new InternalServerError(`Внутреняя ошибка сервера при изменении товара: ${err.message}`);
+      next(error);
+    });
+};
+
+export const deleteProduct = async (req: Request, res: Response, next: NextFunction) => {
+  const { productId } = req.params;
+
+  return Product.findByIdAndDelete(productId).then((product) => {
+    if (!product) {
+      next(new NotFoundError('Товар не найден.'));
+      return;
+    }
+
+    res.send(product);
+  });
 };
