@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import path from 'path';
+import * as fs from 'node:fs';
 
 export interface IProduct {
   title: string;
@@ -42,6 +44,13 @@ const productSchema = new mongoose.Schema<IProduct>({
     required: false,
     default: null,
   },
+});
+
+productSchema.post('deleteOne', (doc) => {
+  const filePath = path.join(__dirname, '../public', doc.image.fileName);
+  fs.rm(filePath, (err) => {
+    if (err) throw err;
+  });
 });
 
 export default mongoose.model<IProduct>('product', productSchema);
