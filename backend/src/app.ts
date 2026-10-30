@@ -3,11 +3,13 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import { errors } from 'celebrate';
 import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
 import errorHandler from './middlewares/error-handler';
 import { errorLogger, requestLogger } from './middlewares/logger';
 import notFoundHandler from './middlewares/not-found-handler';
 import indexRouter from './routes';
 
+dotenv.config();
 const port = `${process.env.PORT || 3000}`;
 const app = express();
 app.use(cors({
