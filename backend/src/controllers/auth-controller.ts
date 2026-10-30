@@ -12,6 +12,21 @@ import ConflictError from '../errors/conflict-error';
 import BadRequestError from '../errors/bad-request-error';
 import { JWT_ACCESS_SECRET_KEY, JWT_REFRESH_SECRET_KEY } from '../middlewares/auth';
 
+const singOut = async (userId: any, refreshToken: string, res: Response) => {
+  await User.findByIdAndUpdate(
+    userId,
+    { $pull: { tokens: { token: refreshToken } } },
+  );
+
+  res.clearCookie('refreshToken', {
+    sameSite: 'lax',
+    secure: false,
+    httpOnly: true,
+    maxAge: 0,
+    path: '/',
+  });
+};
+
 const signIn = async (user: any, res: Response) => {
   const accessToken = jwt.sign(
     { _id: user._id },
@@ -112,24 +127,7 @@ export const logout = async (req: Request, res: Response, next: NextFunction) =>
     return;
   }
 
-  const user = await User.findByIdAndUpdate(payload._id, {
-    $pull:
-      { tokens: { token: refreshToken } },
-  }, { new: true });
-
-  if (!user) {
-    next(new NotFoundError('Пользователь не найден.'));
-    return;
-  }
-
-  res.clearCookie('refreshToken', {
-    sameSite: 'lax',
-    secure: false,
-    httpOnly: true,
-    maxAge: 0,
-    path: '/',
-  });
-
+  await singOut(payload._id, refreshToken, res);
   res.send({ success: true });
 };
 
@@ -160,6 +158,7 @@ export const refreshAccessToken = async (req: Request, res: Response, next: Next
     next(new UnauthorizedError('Необходимо авторизоваться.'));
     return;
   }
+  await singOut(user._id, refreshToken, res);
 
   const result = await signIn(user, res);
   res.send({
